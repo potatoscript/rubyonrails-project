@@ -9,6 +9,7 @@ class JobsController < ApplicationController
 
   # GET /jobs/1 or /jobs/1.json
   def show
+    @job.update(views: @job.views+1)
   end
 
   # GET /jobs/new

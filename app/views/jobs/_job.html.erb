@@ -1,4 +1,5 @@
 <div id="<%= dom_id job %>">
+  <h6><%= pluralize(job.views, "view") %></h6>
   <p>
     <strong>Employee:</strong>
     <%= job.employee %>
@@ -18,5 +19,5 @@
     <strong>Status:</strong>
     <%= job.status %>
   </p>
-
+  
 </div>
