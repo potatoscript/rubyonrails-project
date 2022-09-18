@@ -31,9 +31,4 @@ test:
 
 production:
   <<: *default
-  # url:<%= ENV['DATABASE_URL'] %>
-  database: d5eiem30qojb7f
-  host: ec2-3-219-19-205.compute-1.amazonaws.com
-  port: 5432
-  user: dzhihyrwpeljie
-  password: 693df0ea62512f0ef1aa351c56e54c4222592b08c680729197bbe9a1eebdd432
+  url:<%= ENV['DATABASE_URL'] %>
