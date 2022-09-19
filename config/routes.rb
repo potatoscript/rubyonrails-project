@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  devise_for :users, controllers:{
+    sessions: 'users/sessions',
+    regisrations: 'users/registrations'
+  }
   resources :jobs
   get 'home', to:'pages#home'
   get 'employee', to:'pages#employee'

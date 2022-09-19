@@ -1,6 +1,8 @@
 class JobsController < ApplicationController
   before_action :set_job, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!, except: %i[show index]
   skip_before_action :verify_authenticity_token
+  
 
   # GET /jobs or /jobs.json
   def index
@@ -24,6 +26,7 @@ class JobsController < ApplicationController
   # POST /jobs or /jobs.json
   def create
     @job = Job.new(job_params)
+    @job.user = current_user
 
     respond_to do |format|
       if @job.save
