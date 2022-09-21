@@ -9,3 +9,6 @@
     <%= button_to "Destroy this job", @job, method: :delete %>
   </div>
 </div>
+<div class="container">
+  <%= render 'comments/form', job: @job %>
+</div>
