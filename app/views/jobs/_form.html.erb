@@ -11,27 +11,23 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :employee, style: "display: block" %>
-    <%= form.text_field :employee %>
+  <div class="input-group mb-3">
+    <%= form.label :業務, style: "display: block", class:"input-group-text" %>
+    <%= form.text_field :duedate, class:"form-control"%>
   </div>
-
-  <div>
-    <%= form.label :department, style: "display: block" %>
-    <%= form.text_field :department %>
+  <div class="input-group mb-3">
+    <%= form.label :部署, style: "display: block", class:"input-group-text" %>
+    <%= form.text_field :department, class:"form-control"%>
   </div>
-
+  <div class="input-group mb-3">
+    <%= form.label :業務, style: "display: block", class:"input-group-text" %>
+    <%= form.text_field :job, class:"form-control"%>
+  </div>        
+  <div class="input-group mb-3">
+    <%= form.label :状況, style: "display: block", class:"input-group-text" %>
+    <%= form.text_field :status, class:"form-control"%>
+  </div> 
   <div>
-    <%= form.label :job, style: "display: block" %>
-    <%= form.text_field :job %>
-  </div>
-
-  <div>
-    <%= form.label :status, style: "display: block" %>
-    <%= form.text_field :status %>
-  </div>
-
-  <div>
-    <%= form.submit class:"btn btn-primary mt-3" %>
+    <%= form.submit :作成, class:"btn btn-primary mt-3" %>
   </div>
 <% end %>

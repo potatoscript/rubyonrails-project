@@ -1,14 +1,12 @@
-<p style="color: green"><%= notice %></p>
 <div class="container">
+  <h5><%= link_to @job.user.name, user_path(@job.user) %></h5>
   <%= render @job %>
 
   <div>
-    <%= link_to "Edit this job", edit_job_path(@job) %> |
-    <%= link_to "Back to jobs", jobs_path %>
-
-    <%= button_to "Destroy this job", @job, method: :delete %>
+    <%= link_to "編集", edit_job_path(@job), class:"btn btn-primary mr-3" %>
   </div>
 </div>
+<br>
 <div class="container">
   <%= render 'comments/form', job: @job %>
 </div>

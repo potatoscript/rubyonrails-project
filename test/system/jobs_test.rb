@@ -18,7 +18,7 @@ class JobsTest < ApplicationSystemTestCase
     fill_in "Employee", with: @job.employee
     fill_in "Job", with: @job.job
     fill_in "Status", with: @job.status
-    click_on "Create Job"
+    click_on "作成"
 
     assert_text "Job was successfully created"
     click_on "Back"
@@ -42,6 +42,6 @@ class JobsTest < ApplicationSystemTestCase
     visit job_url(@job)
     click_on "Destroy this job", match: :first
 
-    assert_text "Job was successfully destroyed"
+    assert_text "対象業務は削除しました。"
   end
 end

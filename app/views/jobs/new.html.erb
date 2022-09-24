@@ -1,11 +1,5 @@
 <div class="container">
   <h1>新規登録</h1>
-
+  <h5><%= current_user.name %></h5>
   <%= render "form", job: @job %>
-
-  <br>
-
-  <div>
-    <%= link_to "Back to jobs", jobs_path %>
-  </div>
 </div>

@@ -1,24 +1,22 @@
 <div id="<%= dom_id job %>">
-  <h4>Job of <%= link_to job.user.name, user_path(job.user) %></h4>
-  <h6><%= pluralize(job.views, "view") %></h6>
   <p>
-    <strong>Employee:</strong>
-    <%= job.employee %>
+    <strong>納期:</strong>
+    <%= job.duedate %>
   </p>
 
   <p>
-    <strong>Department:</strong>
+    <strong>部署:</strong>
     <%= job.department %>
   </p>
 
   <p>
-    <strong>Job:</strong>
+    <strong>業務:</strong>
     <%= job.job %>
   </p>
 
   <p>
-    <strong>Status:</strong>
+    <strong>状況:</strong>
     <%= job.status %>
   </p>
-  
+
 </div>
