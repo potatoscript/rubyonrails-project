@@ -1,22 +1,19 @@
-<div id="<%= dom_id job %>">
-  <p>
-    <strong>納期:</strong>
-    <%= job.duedate %>
-  </p>
+<table id="<%= dom_id job %>" class="table">
+  <tr>
+    <th><strong><%= t('field.department') %></strong></th>
+    <td><%= job.department %></td>
+  </tr>
+  <tr>
+    <th><strong><%= t('field.jobs') %></strong></th>
+    <td><%= job.job %></td>
+  </tr>
+  <tr>
+    <th><strong><%= t('field.duedate') %></strong></th>
+    <td><%= job.duedate %></td>
+  </tr>
+  <tr>
+    <th><strong><%= t('field.status') %></strong></th>
+    <td><%= job.status %></td>
+  </tr>
 
-  <p>
-    <strong>部署:</strong>
-    <%= job.department %>
-  </p>
-
-  <p>
-    <strong>業務:</strong>
-    <%= job.job %>
-  </p>
-
-  <p>
-    <strong>状況:</strong>
-    <%= job.status %>
-  </p>
-
-</div>
+</table>

@@ -1,33 +1,36 @@
-<%= form_with(model: job) do |form| %>
-  <% if job.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(job.errors.count, "error") %> prohibited this job from being saved:</h2>
+<div class="container">
+  <%= form_with(model: job) do |form| %>
+    <% if job.errors.any? %>
+      <div style="color: red">
+        <h2><%= pluralize(job.errors.count, "error") %> prohibited this job from being saved:</h2>
 
-      <ul>
-        <% job.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
+        <ul>
+          <% job.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="input-group mb-3">
+      <%= form.label t('field.department'), style: "display: block", class:"input-group-text" %>
+      <%= form.text_field :department, class:"form-control"%>
+    </div>
+    <div class="input-group mb-3">
+      <%= form.label t('field.jobs'), style: "display: block", class:"input-group-text" %>
+      <%= form.text_field :job, class:"form-control"%>
+    </div>
+    <div class="input-group mb-3">
+      <%= form.label t('field.duedate'), style: "display: block", class:"input-group-text" %>
+      <%= form.text_field :duedate, class:"form-control"%>
+    </div>        
+    <div class="input-group mb-3">
+      <%= form.label t('field.status'), style: "display: block", class:"input-group-text" %>
+      <%= form.text_field :status, class:"form-control"%>
+    </div> 
+    <div>
+      <%= form.submit :OK, class:"btn btn-primary mt-3" %>
+      <%= link_to t('page.jobs_list'), jobs_path, class:"btn btn-secondary mt-3" %>
     </div>
   <% end %>
-
-  <div class="input-group mb-3">
-    <%= form.label :業務, style: "display: block", class:"input-group-text" %>
-    <%= form.text_field :duedate, class:"form-control"%>
-  </div>
-  <div class="input-group mb-3">
-    <%= form.label :部署, style: "display: block", class:"input-group-text" %>
-    <%= form.text_field :department, class:"form-control"%>
-  </div>
-  <div class="input-group mb-3">
-    <%= form.label :業務, style: "display: block", class:"input-group-text" %>
-    <%= form.text_field :job, class:"form-control"%>
-  </div>        
-  <div class="input-group mb-3">
-    <%= form.label :状況, style: "display: block", class:"input-group-text" %>
-    <%= form.text_field :status, class:"form-control"%>
-  </div> 
-  <div>
-    <%= form.submit :作成, class:"btn btn-primary mt-3" %>
-  </div>
-<% end %>
+</div>  

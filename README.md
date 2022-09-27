@@ -80,9 +80,9 @@
   
 
 
-### 1. DB定義
-  - [Employeesテーブル](./document/Employees.sql) - 従業員マスターテーブルデータDDL
-  - [Jobsテーブル](./document/Jobs.sql) - 業務テーブルデータDDL
+### 1. DB作成
+  - jobsデータベース テーブルを作成する : `rails g scaffold jobs department:string, job:string, duedate:string, status:string`
+  
   
 ### 2. Backend　フォルダ構造 
   - [dist](./arentinc-api/dist) - デプロイされたファイルの場所<br>

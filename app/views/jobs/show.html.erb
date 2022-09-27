@@ -1,12 +1,15 @@
-<div class="container">
-  <h5><%= link_to @job.user.name, user_path(@job.user) %></h5>
+<div class="container mt-3">
+  <h6><%= t('page.user') %>　<%= link_to @job.user.name, user_path(@job.user) %></h6>
   <%= render @job %>
 
   <div>
-    <%= link_to "編集", edit_job_path(@job), class:"btn btn-primary mr-3" %>
+    <%= link_to t('page.edit'), edit_job_path(@job), class:"btn btn-primary" %>
+    <%= link_to t('page.jobs_list'), jobs_path, class:"btn btn-secondary" %>
   </div>
 </div>
+<!--
 <br>
-<div class="container">
-  <%= render 'comments/form', job: @job %>
-</div>
+ <div class="container">
+   <%= render 'comments/form', job: @job %>
+ </div>
+-->
