@@ -19,7 +19,11 @@
       <% @jobs.each do |job| %>
         <tr id="<%= dom_id job %>">
           <td>
-            <%= link_to job.user.name, user_path(job.user) %>
+            <% if user_signed_in? %>
+              <%= link_to job.user.name, user_path(job.user) %>
+            <% else %>
+            <%= job.user.name %>
+            <% end %>
           </td>
           <td>
             <%= job.department %>
