@@ -51,6 +51,7 @@ en:
     register: "登録"
     user: "ユーザー"
     target: "対象"
+    info: "情報"
   field:
     name: "名前"
     department: "部署"

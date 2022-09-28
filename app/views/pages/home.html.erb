@@ -1,5 +1,6 @@
 <div class="container">
     <h1><%= t('page.dashboard') %></h1>
-    <p>Employee Jobs Management Page</p>
-    <%= link_to t('page.jobs'), jobs_path, class:"btn btn-primary" %>
+    <br/>
+    <%= link_to t('page.jobs_list'), jobs_path, class:"btn btn-primary" %>
+    <%= link_to t('page.employees_list'), users_path, class:"btn btn-success" %>
 </div>

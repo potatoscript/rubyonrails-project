@@ -1,9 +1,11 @@
 <div class="container mt-3">
-  <h6><%= t('page.user') %>　<%= link_to @job.user.name, user_path(@job.user) %></h6>
+  <h6><%= @job.user.name+t('page.jobs') %></h6>
   <%= render @job %>
 
   <div>
-    <%= link_to t('page.edit'), edit_job_path(@job), class:"btn btn-primary" %>
+    <% if user_signed_in? && current_user.name == @job.user.name %>
+      <%= link_to t('page.edit'), edit_job_path(@job), class:"btn btn-primary" %>
+    <% end %>  
     <%= link_to t('page.jobs_list'), jobs_path, class:"btn btn-secondary" %>
   </div>
 </div>

@@ -1,0 +1,36 @@
+<div class="container">
+　<div class="input-group mb-3">　
+    <h2><%= t('page.employees_list') %></h2>
+    <h6><%= link_to t('page.home'), root_path, class:"input-group-text mx-5" %></h6>
+  </div>
+  <table class="table table-striped" id="users">
+    <thead class="table-dark">
+      <tr>
+        <th><%= t('field.name')%></th>
+        <th><%= t('page.email')%></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @users.each do |user| %>
+        <tr id="<%= dom_id user %>">
+          <td>
+            <%= user.name %>
+          </td>
+          <td>
+            <%= user.email %>
+          </td>
+          <td>
+            <%= pluralize(user.views, "view") %>
+          </td>
+          <td>
+              <% if user_signed_in? && current_user.name == job.user.name %>
+                <%= link_to t('page.delete'), user_path(user), data: {turbo_method: :delete, turbo_confirm: "削除しますか？"}, class:"btn btn-danger" %>
+              <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
