@@ -9,6 +9,7 @@
         <th><%= t('field.name')%></th>
         <th><%= t('page.email')%></th>
         <th></th>
+        <th></th>
       </tr>
     </thead>
     <tbody>
@@ -21,9 +22,7 @@
             <%= user.email %>
           </td>
           <td>
-              <% if user_signed_in? && current_user.name == job.user.name %>
-                <%= link_to t('page.delete'), user_path(user), data: {turbo_method: :delete, turbo_confirm: "削除しますか？"}, class:"btn btn-danger" %>
-              <% end %>
+            <%= pluralize(user.views, "view") %>
           </td>
         </tr>
       <% end %>
