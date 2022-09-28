@@ -31,3 +31,35 @@
 
 en:
   hello: "Hello world"
+  notice:
+    completed: "作成しました。"
+    updated: "更新しました。"
+    deleted: "対象業務は削除しました。"
+  page:
+    home: "ホーム"
+    jobs_list: "業務一覧"
+    dashboard: "ダッシュボード"
+    jobs: "業務"
+    employee: "従業員"
+    employees_list: "従業員一覧"
+    edit: "編集"
+    create: "作成"
+    new: "新規"
+    delete: "削除"
+    email: "メール"
+    password: "ﾊﾟｽﾜｰﾄﾞ"
+    register: "登録"
+    user: "ユーザー"
+    target: "対象"
+    info: "情報"
+  field:
+    name: "名前"
+    department: "部署"
+    duedate: "納期"
+    jobs: "業務"
+    status: "状況"
+    reviews_no: "閲覧回数"
+  user:
+    login: "ログイン"
+    signout: "サインアウト"
+    signup: "サインアップ"

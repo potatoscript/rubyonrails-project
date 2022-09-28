@@ -30,7 +30,7 @@ class JobsController < ApplicationController
 
     respond_to do |format|
       if @job.save
-        format.html { redirect_to job_url(@job), notice: "Job was successfully created." }
+        format.html { redirect_to jobs_path, notice: t('notice.completed') }
         format.json { render :show, status: :created, location: @job }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -40,10 +40,11 @@ class JobsController < ApplicationController
   end
 
   # PATCH/PUT /jobs/1 or /jobs/1.json
+  # to return to the job show use redirect_to job_url(@job)
   def update
     respond_to do |format|
       if @job.update(job_params)
-        format.html { redirect_to job_url(@job), notice: "Job was successfully updated." }
+        format.html { redirect_to jobs_path, notice: t('notice.updated') }
         format.json { render :show, status: :ok, location: @job }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -57,7 +58,7 @@ class JobsController < ApplicationController
     @job.destroy
 
     respond_to do |format|
-      format.html { redirect_to jobs_url, notice: "Job was successfully destroyed." }
+      format.html { redirect_to jobs_url, notice: t('notice.deleted') }
       format.json { head :no_content }
     end
   end
@@ -70,6 +71,6 @@ class JobsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def job_params
-      params.require(:job).permit(:employee, :department, :job, :status)
+      params.require(:job).permit(:duedate, :department, :job, :status)
     end
 end

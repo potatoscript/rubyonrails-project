@@ -1,24 +1,19 @@
-<div id="<%= dom_id job %>">
-  <h4>Job of <%= link_to job.user.name, user_path(job.user) %></h4>
-  <h6><%= pluralize(job.views, "view") %></h6>
-  <p>
-    <strong>Employee:</strong>
-    <%= job.employee %>
-  </p>
+<table id="<%= dom_id job %>" class="table">
+  <tr>
+    <th><strong><%= t('field.department') %></strong></th>
+    <td><%= job.department %></td>
+  </tr>
+  <tr>
+    <th><strong><%= t('field.jobs') %></strong></th>
+    <td><%= job.job %></td>
+  </tr>
+  <tr>
+    <th><strong><%= t('field.duedate') %></strong></th>
+    <td><%= job.duedate %></td>
+  </tr>
+  <tr>
+    <th><strong><%= t('field.status') %></strong></th>
+    <td><%= job.status %></td>
+  </tr>
 
-  <p>
-    <strong>Department:</strong>
-    <%= job.department %>
-  </p>
-
-  <p>
-    <strong>Job:</strong>
-    <%= job.job %>
-  </p>
-
-  <p>
-    <strong>Status:</strong>
-    <%= job.status %>
-  </p>
-  
-</div>
+</table>

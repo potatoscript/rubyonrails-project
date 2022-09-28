@@ -1,12 +1,12 @@
 <div class="container">
-  <h1>Editing job</h1>
+  <h3><%= t('page.edit') %></h3>
 
   <%= render "form", job: @job %>
 
   <br>
 
   <div>
-    <%= link_to "Show this job", @job %> |
-    <%= link_to "Back to jobs", jobs_path %>
+    <%= link_to t('page.target')+t('page.jobs'), @job %> |
+    <%= link_to t('page.jobs_list'), jobs_path %>
   </div>
 </div>

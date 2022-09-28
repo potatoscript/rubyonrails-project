@@ -18,28 +18,13 @@
 
 ## 概要
 [目次](#目次)
-### ワークフロー
-<image style="width:300px;height:150px" src="./document/workflow.png" />
 
-### スクリーンショット
-<table>
-<tr>
-<td>DEMO</td>
-<td><image style="width:300px;height:150px" src="./document/demo.gif" /></td>
-</tr>
-<tr>
-<td>PC表示</td>
-<td><image style="width:300px;height:150px" src="./document/screenshot.png" /></td>
-</tr>
-<tr>
-<td>スマートフォン表示</td>
-<td><image style="width:200px;height:250px" src="./document/screenshot3.png" /></td>
-</tr>
-</table>
+### ワークフロー
+<image style="width:300px;height:150px" src="./documents/flow.png" />
 
 ### リンク
-  以下のリンクは、デモンストレーションのために github にアップロードされた [Front End] システムのみです。<br>
-  URL: [Frontend ライブサイト](https://potatoscript.github.io/arentinc-production/)
+  以下のリンクは、デモンストレーションのために heroku にアップロードされたシステムです。<br>
+  URL: [My Ruby andn Rails ライブサイト](https://rubyonrails-project.herokuapp.com/jobs)
 
 ## 構造
 [目次](#目次)
@@ -80,9 +65,9 @@
   
 
 
-### 1. DB定義
-  - [Employeesテーブル](./document/Employees.sql) - 従業員マスターテーブルデータDDL
-  - [Jobsテーブル](./document/Jobs.sql) - 業務テーブルデータDDL
+### 1. DB作成
+  - jobsデータベース テーブルを作成する : `rails g scaffold jobs department:string, job:string, duedate:string, status:string`
+  
   
 ### 2. Backend　フォルダ構造 
   - [dist](./arentinc-api/dist) - デプロイされたファイルの場所<br>
@@ -136,6 +121,8 @@
    - Uncaught (in promise) RangeError: Maximum call stack size exceeded 
 - 今後検証付きのログインページを作成する（Login・Logout・Register機能追加）
 
+
+https://github.com/heartcombo/devise/blob/main/app/controllers/devise/registrations_controller.rb
 
 ## d 著者
 

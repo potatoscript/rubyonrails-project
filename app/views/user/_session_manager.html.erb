@@ -1,21 +1,24 @@
 <% if current_user %>
     <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <a class="nav-link " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             <%= current_user.name %>
+            <svg xmlns="http://www.w3.org/2000/svg" width="31" height="31" fill="currentColor" class="bi bi-card-list" viewBox="0 0 16 16">
+  <path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z"/>
+  <path d="M5 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 5 8zm0-2.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0 5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-1-5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zM4 8a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm0 2.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0z"/>
+</svg>
         </a>
         <ul class="dropdown-menu dropdown-menu-lg-end">
-            <li><%= link_to "新規", new_job_path, class:"dropdown-item" %></li>
-            <li><%= link_to '編集', edit_user_registration_path, class:"dropdown-item" %></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><%= link_to t('page.new'), new_job_path, class:"dropdown-item" %></li>
+            <li><%= link_to t('page.edit'), edit_user_registration_path, class:"dropdown-item" %></li>
             <li><hr class="dropdown-divider"></li>
-            <li><%= button_to 'Sign Out', destroy_user_session_path, method: :delete, class:"dropdown-item" %></li>
+            <li><%= button_to t('user.signout'), destroy_user_session_path, method: :delete, class:"dropdown-item" %></li>
         </ul>
     </li>
 <% else %>    
     <li class="nav-item">
-        <%= link_to "Sign Up", new_user_registration_path, class:"nav-link" %>
+        <%= link_to t('user.signup'), new_user_registration_path, class:"nav-link" %>
     </li>
     <li class="nav-item">
-        <%= link_to "Login", new_user_session_path, class:"nav-link" %>
+        <%= link_to t('user.login'), new_user_session_path, class:"nav-link" %>
     </li>
 <% end %>

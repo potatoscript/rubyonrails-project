@@ -1,16 +1,48 @@
 <div class="container">
-  <p style="color: green"><%= notice %></p>
-
-  <h1>Jobs</h1>
-
-  <div id="jobs">
-    <% @jobs.each do |job| %>
-      <%= render job %>
-      <p>
-        <%= link_to "Show this job", job %>
-      </p>
-    <% end %>
-  </div>
-
-  <%= link_to "New job", new_job_path %>
+  <h1><%= t('page.jobs_list') %></h1>
+  <% if user_signed_in? %>
+  <%= link_to "新規", new_job_path %>
+  <%end%>
+  <table class="table table-striped" id="jobs">
+    <thead class="table-dark">
+      <tr>
+        <th><%= t('field.name')%></th>
+        <th><%= t('field.department')%></th>
+        <th><%= t('field.jobs')%></th>
+        <th><%= t('field.duedate')%></th>
+        <th><%= t('field.status')%></th>
+        <th><%= t('field.reviews_no')%></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @jobs.each do |job| %>
+        <tr id="<%= dom_id job %>">
+          <td>
+            <%= job.user.name %>
+          </td>
+          <td>
+            <%= job.department %>
+          </td>
+          <td>
+            <%= link_to job.job, job %>
+          </td>
+          <td>
+            <%= job.duedate %>
+          </td>
+          <td>
+            <%= job.status %>
+          </td>
+          <td>
+            <%= pluralize(job.views, "view") %>
+          </td>
+          <td>
+              <% if user_signed_in? && current_user.name == job.user.name %>
+                <%= link_to t('page.delete'), job_path(job), data: {turbo_method: :delete, turbo_confirm: "削除しますか？"}, class:"btn btn-danger" %>
+              <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 </div>

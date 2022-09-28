@@ -1,11 +1,4 @@
-<div class="container">
-  <h1>新規登録</h1>
-
+<div class="container my-3">
+  <h3><%= current_user.name+t('page.jobs')+t('page.new')+t('page.register') %></h3>
   <%= render "form", job: @job %>
-
-  <br>
-
-  <div>
-    <%= link_to "Back to jobs", jobs_path %>
-  </div>
 </div>
