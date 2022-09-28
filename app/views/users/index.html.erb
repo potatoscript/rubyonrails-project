@@ -9,7 +9,6 @@
         <th><%= t('field.name')%></th>
         <th><%= t('page.email')%></th>
         <th></th>
-        <th></th>
       </tr>
     </thead>
     <tbody>
@@ -20,9 +19,6 @@
           </td>
           <td>
             <%= user.email %>
-          </td>
-          <td>
-            <%= pluralize(user.views, "view") %>
           </td>
           <td>
               <% if user_signed_in? && current_user.name == job.user.name %>
